@@ -62,9 +62,12 @@
 	        <c:when test="${client.localCurrency == 2}"><span class="input-group-text">CAD</span></c:when>
 	        <c:otherwise>undefined</c:otherwise>
 	    </c:choose>
-	    <input type="text" class="form-control" aria-label="Amount" name="depositAmount">
-	    <input type="hidden" name="email" value="${client.email}" />
-	    <button type="submit" class="btn btn-outline-secondary" type="button" action="DepositServlet" method="post">Deposit</button>
+	    <form ction="DepositServlet" method="post">
+		    <input type="text" class="form-control" aria-label="Amount" name="amount">
+		    <input type="hidden" name="email" value="${client.email}" />
+		    <button type="submit" class="btn btn-outline-secondary" type="button" a>Deposit</button>
+	    </form>
+	    
 	  </div>
 	</div>
 	<h4>WITHDRAW</h4>
@@ -80,10 +83,12 @@
 		        <c:when test="${client.localCurrency == 2}"><span class="input-group-text">CAD</span></c:when>
 		        <c:otherwise>undefined</c:otherwise>
 		    </c:choose>
-		    <input type="hidden" name="email" value="${client.email}" />
-		    <input type="hidden" name="coin" value="${client.localCurrency}" />
-  			<input type="text" class="form-control" aria-label="Amount" name="withdrawAmount">
-  		<button type="submit" class="btn btn-outline-secondary" type="button" action="WithdrawServlet" method="post">Whitdraw</button>
+		    <form action="WithdrawServlet" method="post">
+			    <input type="hidden" name="email" value="${client.email}" />
+	  			<input type="text" class="form-control" aria-label="Amount" name="amount">
+	  			<button type="submit" class="btn btn-outline-secondary" type="button" >Whitdraw</button>
+		    </form>
+		    
 		</div>
 	</div>
 	</shiro:guest>
